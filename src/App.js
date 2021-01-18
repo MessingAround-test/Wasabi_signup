@@ -211,8 +211,8 @@ function SignUpSheet(){
     
      
     </Form.Group>
-    <Router>
-    <Route path="/QRCode">
+     <Router>
+    <Route path="/about">
       <QRCodeShower />
     </Route>
     </Router>
