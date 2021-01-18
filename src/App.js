@@ -10,7 +10,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Button from 'react-bootstrap/Button';
+
 import Form from 'react-bootstrap/Form';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 firebase.initializeApp({
   apiKey: "AIzaSyAavR_oNAX7acSEr5-0wV6WBKQpDNaVHrM",
   authDomain: "eventattendance-33368.firebaseapp.com",
@@ -43,8 +47,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Wasabi Event users</h1>
-        <SignOut />
+        {user ? <NavBar /> : <ReturnNothing/>}
+        
       </header>
 
       <section>
@@ -52,6 +56,30 @@ function App() {
       </section>
       <canvas id="canvas"></canvas>
     </div>
+  );
+}
+
+
+
+function NavBar(){
+  return (
+    
+    <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="#home">Wasabi event login</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+      <Nav.Link href="#Membership">Become a member</Nav.Link>
+      <Nav.Link href="#events">Upcoming Events</Nav.Link>
+      <Nav.Link href="/QRCode">QR code</Nav.Link>
+    </Nav>
+    <Form inline>
+      
+      
+      <SignOut />
+    </Form>
+  </Navbar.Collapse>
+</Navbar>
   );
 }
 
@@ -71,11 +99,17 @@ function SignIn() {
 
 }
 
+
 function SignOut() {
   return auth.currentUser && (
-    <Button className="sign-out" onClick={() => auth.signOut()}>Sign Out</Button>
+    <Button className="sign-out" variant="outline-success" onClick={() => auth.signOut()}>Sign Out</Button>
   )
 }
+
+function ReturnNothing(){
+  return (null);
+}
+
 
 function SignUpSheet(){
 
@@ -154,10 +188,11 @@ function SignUpSheet(){
 
 
   return (
+    
     <Form onSubmit={sendForm}>
-    <Form.Group controlId="formBasicEmail">
-      <Form.Label>Not email</Form.Label>
-      <Form.Control type="text" placeholder='something that isnt email' />
+    <Form.Group controlId="BasicInputForm">
+      <Form.Label>University Degree</Form.Label>
+      <Form.Control type="text" placeholder='Degree Name' />
       <Form.Text className="text-muted">
         We'll never share your email with anyone else.
       </Form.Text>

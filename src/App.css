@@ -1,12 +1,18 @@
 
 .App {
   text-align: center;
-  max-width: 728px;
+  max-width: 80%;
   margin: 0 auto;
-}/*
+  /* background-color: #282c34; */
+}
 
-body {
-  background-color: #282c34;
+
+/* .App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(40, 37, 53);
 }
 
 .App header {
@@ -16,7 +22,7 @@ body {
   color: white;
   position: fixed;
   width: 100%;
-  max-width: 728px;
+  max-width: 50%;
   top: 0;
   display: flex;
   align-items: center;
@@ -24,14 +30,16 @@ body {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
+} */
+
+/*
+
+body {
+  
 }
-.App section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: rgb(40, 37, 53);
-}
+
+
 
 
 
