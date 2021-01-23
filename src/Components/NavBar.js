@@ -1,32 +1,37 @@
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-const Navbar = () => {
-    const [isOpen, setOpen] = useState(false);
-    return ( 
-        <nav
-        className="navbar is-primary"
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div className="container">
-        <div className="navbar-brand">
-            <a
-              role="button"
-              className={`navbar-burger burger ${isOpen && "is-active"}`}
-              aria-label="menu"
-              aria-expanded="false"
-              onClick={() => setOpen(!isOpen)}
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-            {/* ... */}
-        </div>
-      </nav>
-    );
-   };
- 
- export default Navbar;
+
+import Form from 'react-bootstrap/Form';
+
+
+
+const NavBar = () =>{
+  
+
+  
+  return (
+    
+    <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="#home">Wasabi event login</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+      <Nav.Link href="#Membership">Become a member</Nav.Link>
+      <Nav.Link href="#events">Upcoming Events</Nav.Link>
+      <Nav.Link href="/QRCode">QR code</Nav.Link>
+    </Nav>
+    <Form inline>
+      
+      
+      {/* <SignOut /> */}
+    </Form>
+  </Navbar.Collapse>
+</Navbar>
+  );
+}
+
+
+
+export default NavBar;

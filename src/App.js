@@ -13,8 +13,7 @@ import Button from 'react-bootstrap/Button';
  
 
 import Form from 'react-bootstrap/Form';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import NavBar from './Components/NavBar'
 import QRCodeShower from './Components/QRCodeShower';
 
 import {
@@ -71,27 +70,7 @@ function App() {
 
 
 
-function NavBar(){
-  return (
-    
-    <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">Wasabi event login</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-      <Nav.Link href="#Membership">Become a member</Nav.Link>
-      <Nav.Link href="#events">Upcoming Events</Nav.Link>
-      <Nav.Link href="/QRCode">QR code</Nav.Link>
-    </Nav>
-    <Form inline>
-      
-      
-      <SignOut />
-    </Form>
-  </Navbar.Collapse>
-</Navbar>
-  );
-}
+
 
 function SignIn() {
 
@@ -212,7 +191,7 @@ function SignUpSheet(){
      
     </Form.Group>
      <Router>
-    <Route path="/about">
+    <Route path="/QRCode">
       <QRCodeShower />
     </Route>
     </Router>
